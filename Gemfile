@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'puma'
 
+gem 'bcrypt', '~> 3.1.7'
+
 group :development, :test do
   gem 'byebug'
 end
