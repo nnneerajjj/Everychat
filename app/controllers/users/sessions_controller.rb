@@ -5,9 +5,13 @@ class Users::SessionsController < ApplicationController
 
   def create
     user = User.find_by(name: user_params[:name])&.authenticate(user_params[:password])
-    return new_user_session_path if user
-    session[:user_id] = user.id
-    redirect_to root_path
+    unless user
+      redirect_to new_user_session_path
+      # flash[:alert] = 'failed to login.'
+    else
+      session[:user_id] = user.id
+      redirect_to root_path
+    end
   end
 
   def destroy
