@@ -1,0 +1,7 @@
+<%= form_tag create_user_session_path do %>
+  <%= fields_for :user do |f| %>
+    <%= f.text_field :name %><br>
+    <%= f.password_field :password %><br>
+    <%= f.submit %>
+  <% end %>
+<% end %>
