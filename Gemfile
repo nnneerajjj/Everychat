@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '>= 5.0.0.beta1', '< 5.1'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails', '>= 3.2'
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jquery-rails'
