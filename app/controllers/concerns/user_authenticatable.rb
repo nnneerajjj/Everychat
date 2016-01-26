@@ -8,9 +8,7 @@ module UserAuthenticatable
   def authenticate_user!
     unless user_signed_in?
       redirect_to new_user_session_path
-      # flash[:alert]
-    else
-      # flash[:notice]
+      flash[:alert] = 'You need to sign in or sign up before continuing.'
     end
   end
 
