@@ -1,6 +1,9 @@
-<%= form_for @user do |f| %>
-  <%= f.text_field :name %><br>
-  <%= f.password_field :password %><br>
-  <%= f.password_field :password_confirmation %><br>
-  <%= f.submit %>
+<%= form_for @user, html: { class: 'pure-form' } do |f| %>
+  <fieldset>
+    <legend>Sign up</legend>
+    <%= f.text_field :name, placeholder: 'name' %>
+    <%= f.password_field :password, placeholder: 'password' %>
+    <%= f.password_field :password_confirmation, placeholder: 'password confirmation' %>
+    <%= f.submit 'Sign up', class: 'button-green pure-button' %>
+  </fieldset>
 <% end %>

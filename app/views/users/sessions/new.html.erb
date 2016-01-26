@@ -1,7 +1,10 @@
-<%= form_tag create_user_session_path do %>
-  <%= fields_for :user do |f| %>
-    <%= f.text_field :name %><br>
-    <%= f.password_field :password %><br>
-    <%= f.submit %>
-  <% end %>
+<%= form_tag create_user_session_path, class: 'pure-form' do %>
+  <fieldset>
+    <legend>Sign in</legend>
+    <%= fields_for :user do |f| %>
+      <%= f.text_field :name, placeholder: 'name' %>
+      <%= f.password_field :password, placeholder: 'password' %>
+      <%= f.submit 'Sign in', class: 'pure-button pure-button-primary' %>
+    <% end %>
+  </fieldset>
 <% end %>
