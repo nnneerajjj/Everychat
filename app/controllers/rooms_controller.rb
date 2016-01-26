@@ -22,6 +22,13 @@ class RoomsController < ApplicationController
   end
 
   def destroy
+    if Room.find(params[:id]).destroy
+      flash[:notice] = 'Room was destroyed successfully.'
+    else
+      flash[:alert] =  'Faild to destroy a room.'
+    end
+
+    redirect_to rooms_path
   end
 
   private
