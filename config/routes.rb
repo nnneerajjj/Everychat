@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'home#index'
+
   get    'users/sessions/new' => 'users/sessions#new',     as: 'new_user_session'
   post   'users/sessions'     => 'users/sessions#create',  as: 'create_user_session'
   delete 'users/sessions'     => 'users/sessions#destroy', as: 'destroy_user_session'
