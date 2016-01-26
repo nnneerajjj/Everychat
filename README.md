@@ -1,24 +1,23 @@
-## README
+# Every Chat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is real time chat application, create with rails 5.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+```
+% bundle exec rails db:create
+% bundle exec rails db:migrate
+```
 
-* System dependencies
+## Run server
 
-* Configuration
+```
+% bundle exec rails s
+```
 
-* Database creation
+## Test
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+% bundle exec rubocop
+% bundle exec rails test
+```
