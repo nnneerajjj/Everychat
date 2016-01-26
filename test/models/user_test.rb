@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'validate successfully' do
-    assert @user.validate
+    assert @user.validate, 'user should be valid'
   end
 
   test 'user has many messages' do

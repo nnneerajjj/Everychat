@@ -1,0 +1,4 @@
+<% 10.times do |n| %>
+  <%= "room_#{n}" %>:
+    name: <%= "name_#{n}" %>
+<% end %>

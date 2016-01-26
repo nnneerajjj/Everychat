@@ -1,0 +1,6 @@
+<% 10.times do |n| %>
+  <%= "user_#{n}" %>:
+    name: <%= "name_#{n}" %>
+    password_digest: <%= BCrypt::Password.create('pass') %>
+    rooms: <%= "room_#{n}" %>
+<% end %>
