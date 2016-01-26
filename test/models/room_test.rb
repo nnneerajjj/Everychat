@@ -19,8 +19,8 @@ class RoomTest < ActiveSupport::TestCase
     assert @room.respond_to?(:messages)
   end
 
-  test '#entry! user' do
-    @room.entry!(@user)
+  test '#enter user' do
+    @room.enter!(@user)
     assert @room.users.include?(@user)
   end
 end
