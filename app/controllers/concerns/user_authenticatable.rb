@@ -1,4 +1,4 @@
-module UserSessions
+module UserAuthenticatable
   extend ActiveSupport::Concern
 
   def current_user
@@ -15,6 +15,6 @@ module UserSessions
   end
 
   def user_signed_in?
-    return session.key?(:user_id) && User.find(session[:user_id])
+    session.key?(:user_id) && User.find(session[:user_id])
   end
 end
