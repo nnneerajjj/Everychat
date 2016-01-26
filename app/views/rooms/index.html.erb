@@ -1,8 +1,28 @@
-<% @rooms.each do |room| %>
-  <%= link_to room.name, room %>
-<% end %>
+<table class="pure-table pure-table-bordered">
+  <thead>
+    <tr>
+      <th>Room name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @rooms.each do |room| %>
+    <tr>
+      <td>
+        <%= link_to room.name, room %>
+      </td>
+      <td>
+        <%= link_to 'Delete', room, method: :delete, class: 'pure-button' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
-<%= form_for @room do |f| %>
-  <%= f.text_field :name %><br>
-  <%= f.submit %>
+<%= form_for @room, html: { class: 'pure-form' } do |f| %>
+  <fieldset>
+    <legend>Create new room</legend>
+    <%= f.text_field :name %>
+    <%= f.submit 'Create', class: 'pure-button pure-button-primary' %>
+  </fieldset>
 <% end %>
