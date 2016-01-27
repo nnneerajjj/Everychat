@@ -17,4 +17,8 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
     get room_path(rooms(:room_1))
     assert_response :success
   end
+
+  teardown do
+    delete destroy_user_session_path
+  end
 end
