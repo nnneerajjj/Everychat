@@ -20,7 +20,7 @@ class RoomTest < ActiveSupport::TestCase
   end
 
   test '#enter user' do
-    @room.enter!(@user)
+    @room.participate!(@user)
     assert @room.users.include?(@user)
   end
 end
