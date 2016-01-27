@@ -3,6 +3,7 @@
     <tr>
       <th>Room name</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -10,6 +11,9 @@
     <tr>
       <td>
         <%= link_to room.name, room %>
+      </td>
+      <td>
+        <%= link_to 'Enter', enter_room_path(room), method: :put, class: 'button-green pure-button' %>
       </td>
       <td>
         <%= link_to 'Delete', room, method: :delete, class: 'button-red pure-button' %>
