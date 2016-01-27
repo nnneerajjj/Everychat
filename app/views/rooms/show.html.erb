@@ -1,1 +1,16 @@
 <h1><%= @room.name %></h1>
+
+<div id="messages">
+  <% @room.messages.each do |message| %>
+    <p><%= "#{message.user.name}: #{message.content}" %></p>
+  <% end %>
+</div>
+
+<form class="pure-form">
+  <fieldset>
+    <legend>Say something:</legend>
+    <input type="text" data-behavior="room_speaker">
+  </fieldset>
+</form>
+
+<%= hidden_field_tag :room_id, params[:id] %>
