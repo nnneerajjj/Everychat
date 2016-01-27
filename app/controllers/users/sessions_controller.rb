@@ -4,7 +4,7 @@ class Users::SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: user_params[:name])&.authenticate(user_params[:password])
+    user = User.find_by(name: user_params[:name]).try(:authenticate, user_params[:password])
     if user.nil?
       redirect_to new_user_session_path
       flash[:alert] = 'Failed to sign in.'
