@@ -2,10 +2,13 @@ require 'test_helper'
 
 class RoomsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    user = User.create(name: 'name', password: 'pass', password_confirmation: 'pass')
+    name = 'name'
+    password = 'pass'
+
+    User.create(name: name, password: password, password_confirmation: password)
 
     post create_user_session_path,
-      params: { user: { name: 'name', password: 'pass' } }
+      params: { user: { name: name, password: password } }
   end
 
   test 'should get rooms' do
