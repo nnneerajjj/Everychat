@@ -6,4 +6,8 @@ class Room < ApplicationRecord
     self.users << user
     save!
   end
+
+  def participated?(user)
+    users.include? user
+  end
 end
