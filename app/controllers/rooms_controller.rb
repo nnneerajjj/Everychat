@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_room, :restrict_access!, only: %i(show update destroy enter)
+  before_action :set_room, only: %i(show update destroy enter)
+  before_action :restrict_access!, only: %i(show update destroy)
 
   def index
     cookies.delete :room_id
@@ -38,8 +39,7 @@ class RoomsController < ApplicationController
 
   def enter
     @room.participate! current_user
-    redirect_to @room
-    flash[:notice] = 'You participated successfully.'
+    redirect_to @room, notice: 'You participated successfully.'
   end
 
   private
@@ -53,6 +53,8 @@ class RoomsController < ApplicationController
   end
 
   def restrict_access!
-    @room.participated? current_user
+    unless @room.participated? current_user
+      redirect_to rooms_path, alert: 'You have to participate in the room.'
+    end
   end
 end
