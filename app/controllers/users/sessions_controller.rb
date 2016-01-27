@@ -7,24 +7,20 @@ class Users::SessionsController < ApplicationController
     user = User.find_by(name: user_params[:name]).try(:authenticate, user_params[:password])
 
     if user.nil?
-      redirect_to new_user_session_path
-      flash[:alert] = 'Failed to sign in.'
+      redirect_to new_user_session_path, alert: 'Failed to sign in.'
     else
-      flash[:notice] = 'Signed in successfully.'
-
       cookies.signed[:user_id] = {
         value:      user.id,
         expires: 1.day.from_now
       }
 
-      redirect_to root_path
+      redirect_to root_path, notice: 'Signed in successfully.'
     end
   end
 
   def destroy
     cookies.delete :user_id
-    redirect_to root_path
-    flash[:notice] = 'Signed out successfully.'
+    redirect_to root_path, notice: 'Signed out successfully.'
   end
 
   private
