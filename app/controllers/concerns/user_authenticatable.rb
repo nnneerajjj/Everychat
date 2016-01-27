@@ -6,11 +6,11 @@ module UserAuthenticatable
   end
 
   def current_user
-    User.find(session[:user_id]) if user_signed_in?
+    User.find(cookies.signed[:user_id]) if user_signed_in?
   end
 
   def user_signed_in?
-    session.key?(:user_id) && User.find(session[:user_id])
+    cookies.signed[:user_id].present? && User.find(cookies.signed[:user_id])
   end
 
   def authenticate_user!
