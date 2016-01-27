@@ -2,11 +2,13 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    cookies.delete :room_id
     @room = Room.new
     @rooms = Room.all
   end
 
   def show
+    cookies.signed[:room_id] = params[:id]
     @room = Room.find(params[:id])
   end
 
