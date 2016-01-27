@@ -7,6 +7,7 @@ module ApplicationCable
       self.current_user = connection_params[:user]
       self.current_room = connection_params[:room]
       logger.add_tags current_user.name
+      logger.add_tags current_room.name
     end
 
     def disconnected
@@ -15,8 +16,8 @@ module ApplicationCable
     protected
 
     def verified_connection_params
-      if room = Room.find(cookies.signed[:room_id]) and
-         user = User.find(cookies.signed[:user_id]) and
+      if room = Room.find_by_id(cookies.signed[:room_id]) and
+         user = User.find_by_id(cookies.signed[:user_id]) and
          room.participated? user
 
         { user: user, room: room }
