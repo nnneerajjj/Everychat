@@ -11,7 +11,7 @@ class RoomChannel < ApplicationCable::Channel
     Message.create! do |message|
       message.content = data['message']
       message.room    = Room.find(data['room_id'])
-      message.user    = User.find(data['user_id'])
+      message.user    = current_user
     end
   end
 end

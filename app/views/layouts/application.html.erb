@@ -20,8 +20,5 @@
 
     <%= yield %>
 
-    <% if user_signed_in? %>
-      <%= hidden_field_tag :user_id, current_user.id %>
-    <% end %>
   </body>
 </html>
