@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
   def show
     cookies.signed[:room_id] = params[:id]
     @room = Room.find(params[:id])
+    @messages = @room.messages.includes(:user)
   end
 
   def create
