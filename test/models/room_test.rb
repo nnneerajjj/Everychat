@@ -20,6 +20,7 @@ class RoomTest < ActiveSupport::TestCase
   end
 
   test 'participate user' do
+    assert_not @room.participated? @user
     @room.participate! @user
     assert @room.users.include? @user
     assert @room.participated? @user
