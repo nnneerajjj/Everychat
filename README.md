@@ -13,7 +13,8 @@ This is real time chat application, create with rails 5.
 ## Run server
 
 ```
-% bundle exec foreman start
+% redis-server
+% bundle exec rails s
 ```
 
 ## Test
