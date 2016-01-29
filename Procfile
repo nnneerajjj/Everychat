@@ -1,2 +1,1 @@
-web: bundle exec rails server
-redis: redis-server
+web: bundle exec rails server -p $PORT

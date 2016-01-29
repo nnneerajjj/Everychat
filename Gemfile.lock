@@ -120,6 +120,7 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     parser (2.3.0.2)
       ast (~> 2.2)
+    pg (0.18.4)
     powerpack (0.1.1)
     puma (2.16.0)
     rack (2.0.0.alpha)
@@ -146,6 +147,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.4)
     railties (5.0.0.beta1.1)
       actionpack (= 5.0.0.beta1.1)
       activesupport (= 5.0.0.beta1.1)
@@ -208,8 +214,10 @@ DEPENDENCIES
   jquery-rails
   minitest-reporters
   mysql2 (>= 0.3.18, < 0.5)
+  pg
   puma
   rails (= 5.0.0beta1.1)
+  rails_12factor
   rubocop
   sass-rails
   spring
