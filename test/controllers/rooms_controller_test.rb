@@ -9,6 +9,7 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
 
     post create_user_session_path,
       params: { user: { name: name, password: password } }
+    assert_response :redirect
   end
 
   test 'should get rooms' do
@@ -16,12 +17,17 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should get room' do
-    get room_path(rooms(:room_1))
+  test 'should enter room' do
+    room = rooms(:room_1)
+    get room_path(room)
+    assert_response :redirect
+    put enter_room_path(room)
+    get room_path(room)
     assert_response :success
   end
 
   teardown do
     delete destroy_user_session_path
+    assert_response :redirect
   end
 end
