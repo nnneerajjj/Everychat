@@ -11,6 +11,18 @@ class RoomTest < ActiveSupport::TestCase
     assert room.validate
   end
 
+  test 'room name should not to be blank' do
+    invalid_room = Room.new(name: nil)
+    assert_not invalid_room.validate
+  end
+
+  test 'room name should not only spaces' do
+    assert_not Room.new(name: ' ').validate
+    assert_not Room.new(name: '　').validate
+    assert_not Room.new(name: '').validate
+    assert Room.new(name: ' room ').validate
+  end
+
   test 'room has many users' do
     assert @room.respond_to?(:users)
   end
