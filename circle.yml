@@ -1,0 +1,12 @@
+machine:
+  timezone: Asia/Tokyo
+  ruby:
+    version: 2.2.4
+  environment:
+    RAILS_ENV: test
+
+test:
+  pre:
+    - bundle exec rubocop
+  override:
+    - bundle exec rails test
