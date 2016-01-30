@@ -15,7 +15,8 @@ class RoomsController < ApplicationController
   end
 
   def create
-    if Room.create(room_params)
+    room = Room.new(room_params)
+    if room.save
       flash[:notice] = 'Room was created successfully.'
     else
       flash[:alert] = 'Failed to create a room.'
