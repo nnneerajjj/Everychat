@@ -23,6 +23,10 @@ class RoomTest < ActiveSupport::TestCase
     assert Room.new(name: ' room ').validate
   end
 
+  test 'room name should be maximum 30 chars' do
+    assert_not Room.new(name: 'abcdefghijklmnopqrstuvwxyz12345').validate
+  end
+
   test 'room has many users' do
     assert @room.respond_to?(:users)
   end

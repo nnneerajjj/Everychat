@@ -4,7 +4,8 @@ class Room < ApplicationRecord
 
   validates :name,
     presence: true,
-    format: { without: /\A[[:blank:]]+\z/ }
+    format: { without: /\A[[:blank:]]+\z/ },
+    length: { maximum: 30 }
 
   def participate!(user)
     self.users << user
