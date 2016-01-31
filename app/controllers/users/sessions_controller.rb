@@ -4,17 +4,18 @@ class Users::SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: user_params[:name]).try(:authenticate, user_params[:password])
+    @user = User.find_by_name(user_params[:name]).try(:authenticate, user_params[:password])
 
-    if user.present?
+    if @user.present?
       cookies.signed[:user_id] = {
-        value:   user.id,
+        value:   @user.id,
         expires: 1.day.from_now
       }
 
       redirect_to root_path, notice: 'Signed in successfully.'
     else
-      redirect_to new_user_session_path, alert: 'Failed to sign in.'
+      render :new
+      flash[:alert] = 'Faild to sign in.'
     end
   end
 
