@@ -1,14 +1,30 @@
-<%= form_for @user, html: { class: 'pure-form' } do |f| %>
+<%= form_for @user, html: { class: 'pure-form pure-form-aligned' } do |f| %>
   <fieldset>
-    <legend>Sign up</legend>
     <% if @user.errors.any? %>
-      <% @user.errors.full_messages.each do |message| %>
-        <p><%= message %></p>
-      <% end %>
+      <div class="pure-control-group">
+        <% @user.errors.full_messages.each do |message| %>
+          <p class="error"><%= message %></p>
+        <% end %>
+      </div>
     <% end %>
-    <%= f.text_field :name, placeholder: 'name' %>
-    <%= f.password_field :password, placeholder: 'password' %>
-    <%= f.password_field :password_confirmation, placeholder: 'password confirmation' %>
-    <%= f.submit 'Sign up', class: 'pure-button-green pure-button' %>
+
+    <div class="pure-control-group">
+      <%= f.label 'username' %>
+      <%= f.text_field :name, placeholder: 'username' %>
+    </div>
+
+    <div class="pure-control-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: 'password' %>
+    </div>
+
+    <div class="pure-control-group">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: 'password confirmation' %>
+    </div>
+
+    <div class="pure-controls">
+      <%= f.submit 'Sign up', class: 'pure-button-green pure-button' %>
+    </div>
   </fieldset>
 <% end %>

@@ -1,10 +1,19 @@
-<%= form_tag create_user_session_path, class: 'pure-form' do %>
+<%= form_tag create_user_session_path, class: 'pure-form pure-form-aligned' do %>
   <fieldset>
-    <legend>Sign in</legend>
     <%= fields_for :user do |f| %>
-      <%= f.text_field :name, placeholder: 'name' %>
-      <%= f.password_field :password, placeholder: 'password' %>
-      <%= f.submit 'Sign in', class: 'pure-button pure-button-primary' %>
+      <div class="pure-control-group">
+        <%= f.label 'username' %>
+        <%= f.text_field :name, placeholder: 'username' %>
+      </div>
+
+      <div class="pure-control-group">
+        <%= f.label 'password' %>
+        <%= f.password_field :password, placeholder: 'password' %>
+      </div>
+
+      <div class="pure-controls">
+        <%= f.submit 'Sign in', class: 'pure-button pure-button-primary' %>
+      </div>
     <% end %>
   </fieldset>
 <% end %>
