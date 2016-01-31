@@ -8,11 +8,11 @@ class Users::RegistrationsController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
+    @user = User.new(user_params)
+    if @user.save
       redirect_to new_user_session_path
     else
-      redirect_to new_user_registration_path
+      render :new
     end
   end
 
