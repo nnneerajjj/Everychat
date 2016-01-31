@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'button-red pure-button' %>
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'pure-button-maroon pure-button' %>
   <p><%= link_to 'Visit rooms', rooms_path %></p>
 <% else %>
   <%= link_to 'Sign in', new_user_session_path, class: 'pure-button-primary pure-button' %>
-  <%= link_to 'Sign up', new_user_path, class: 'button-green pure-button' %>
+  <%= link_to 'Sign up', new_user_path, class: 'pure-button-green pure-button' %>
 <% end %>

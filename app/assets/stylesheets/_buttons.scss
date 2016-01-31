@@ -1,0 +1,24 @@
+.pure-button-green,
+.pure-button-maroon,
+.pure-button-orange,
+.pure-button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.pure-button-green {
+  background: rgb(28, 184, 65);
+}
+
+.pure-button-maroon {
+  background: rgb(202, 60, 60);
+}
+
+.pure-button-orange {
+  background: rgb(223, 117, 20);
+}
+
+.pure-button-secondary {
+  background: rgb(66, 184, 221); /* this is a light blue */
+}
