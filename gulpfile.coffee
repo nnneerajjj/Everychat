@@ -7,5 +7,5 @@ gulp.task 'clean', ->
 
 gulp.task 'package', ->
   # pure
-  gulp.src 'bower_components/pure/pure.css'
+  gulp.src 'node_modules/purecss/build/pure-min.css'
     .pipe gulp.dest 'vendor/assets/stylesheets/'
