@@ -10,3 +10,9 @@ test:
     - bundle exec rubocop
   override:
     - bundle exec rails test
+
+database:
+  pre:
+    - bundle exec rails db:create
+  override:
+    - bundle exec rails db:migrate
