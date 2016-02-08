@@ -7,16 +7,18 @@ This is real time chat application, create with rails 5.
 ## Setup
 
 ```
+% vagrant up
+% vagrant ssh
+% cd /vagrant
+% bundle install --path vendor/bundle
 % bundle exec rails db:create
 % bundle exec rails db:migrate
-% bundle exec rails db:migrate RAILS_ENV=test
 ```
 
 ## Run server
 
 ```
-% redis-server
-% bundle exec rails s
+% bundle exec foreman start -f Procfile.local
 ```
 
 ## Test
