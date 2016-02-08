@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug'
-  gem 'mysql2', '>= 0.3.18', '< 0.5'
+  gem 'sqlite3'
 end
 
 group :development do

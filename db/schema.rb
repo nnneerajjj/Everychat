@@ -13,38 +13,34 @@
 
 ActiveRecord::Schema.define(version: 20160103083702) do
 
-  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "messages", force: :cascade do |t|
     t.integer  "room_id"
     t.integer  "user_id"
-    t.text     "content",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["room_id"], name: "index_messages_on_room_id", using: :btree
-    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "rooms", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "rooms_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "rooms_users", force: :cascade do |t|
     t.integer "room_id"
     t.integer "user_id"
-    t.index ["room_id"], name: "index_rooms_users_on_room_id", using: :btree
-    t.index ["user_id"], name: "index_rooms_users_on_user_id", using: :btree
+    t.index ["room_id"], name: "index_rooms_users_on_room_id"
+    t.index ["user_id"], name: "index_rooms_users_on_user_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
   end
 
-  add_foreign_key "messages", "rooms"
-  add_foreign_key "messages", "users"
-  add_foreign_key "rooms_users", "rooms"
-  add_foreign_key "rooms_users", "users"
 end
