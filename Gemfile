@@ -6,6 +6,7 @@ gem 'rails-i18n', '5.0.0.beta3'
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'coffee-rails', '~> 4.1.1'
+gem 'foreman'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'puma'
