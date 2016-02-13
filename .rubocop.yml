@@ -5,7 +5,7 @@ AllCops:
     - config/**/*
     - db/**/*
     - vendor/**/*
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.2
 
 Rails:
   Enabled: true
