@@ -10,8 +10,14 @@ class Users::RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to new_user_session_path
+      cookies.signed[:user_id] = {
+        value:   @user.id,
+        expires: 1.day.from_now
+      }
+
+      redirect_to root_path, notice: 'Create user successfully.'
     else
+      flash[:alert] = 'Faild to create user.'
       render :new
     end
   end
