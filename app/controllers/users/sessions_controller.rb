@@ -12,7 +12,7 @@ class Users::SessionsController < ApplicationController
         expires: 1.day.from_now
       }
 
-      redirect_to root_path, notice: 'Signed in successfully.'
+      redirect_to rooms_path, notice: 'Signed in successfully.'
     else
       flash[:alert] = 'Faild to sign in.'
       render :new
