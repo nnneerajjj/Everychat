@@ -11,8 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  *= require pure-min
- *= require baloon
  */
 
+@import 'common';
 @import 'buttons';
 @import 'forms';
+@import 'baloon';
