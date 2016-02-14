@@ -14,8 +14,8 @@ class Users::SessionsController < ApplicationController
 
       redirect_to root_path, notice: 'Signed in successfully.'
     else
-      render :new
       flash[:alert] = 'Faild to sign in.'
+      render :new
     end
   end
 
