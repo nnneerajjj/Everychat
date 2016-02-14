@@ -3,10 +3,10 @@ class MessageBroadcastJob < ApplicationJob
 
   def perform(message)
     ActionCable.server.broadcast "room:#{message.room.id}",
+      # message: render_message(message)
       message_content: message.content,
       user_id:         message.user.id,
       user_name:       message.user.name
-      # message: render_message(message)
   end
 
   private
