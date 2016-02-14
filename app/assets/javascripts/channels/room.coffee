@@ -8,25 +8,20 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     # $('#messages').append data['message']
 
   render_message: (data) ->
-    if +$('#current_user_id').val() == data['user_id']
-      """
-      <div>
-        <span>#{data['user_name']}</span>
-        <div class="baloon-right">
-          #{data['message_content']}
-        </div>
-      </div>
-      """
+    klass =
+      if +$('#current_user_id').val() == data['user_id']
+        'baloon-right'
+      else
+        'baloon-left'
 
-    else
-      """
-      <div>
-        <span>#{data['user_name']}</span>
-        <div class="baloon-left">
-          #{data['message_content']}
-        </div>
+    """
+    <div>
+      <span>#{data['user_name']}</span>
+      <div class="#{klass}">
+        #{data['message_content']}
       </div>
-      """
+    </div>
+    """
 
   speak: (message) ->
     @perform 'speak', message: message
