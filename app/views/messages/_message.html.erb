@@ -1,3 +1,10 @@
+<!-- NOTE: DO NOT WORK -->
+
 <% cache message do %>
-  <p><%= "#{message.user.name}: #{message.content}" %></p>
+  <div>
+    <span><%= message.user.name %></span>
+    <div class="<%= current_user == message.user ? 'baloon-right' : 'baloon-left' %>">
+      <%= message.content %>
+    </div>
+  </div>
 <% end %>
