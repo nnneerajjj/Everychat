@@ -4,8 +4,8 @@
   <% @messages.each do |message| %>
     <div>
       <span><%= message.user.name %></span>
-      <div class="baloon-<%= message.user == current_user ? 'right' : 'left' %>">
-        <%= "#{message.content}" %>
+      <div class="<%= current_user == message.user ? 'baloon-right' : 'baloon-left' %>">
+        <%= message.content %>
       </div>
     </div>
   <% end %>
