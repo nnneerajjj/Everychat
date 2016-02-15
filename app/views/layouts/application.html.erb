@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <div class="pure-menu pure-menu-horizontal">
+      <span class="pure-menu-heading">EveryChat</span>
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+          <%= link_to 'Home', root_path, class: 'pure-menu-link' %>
+        </li>
+        <li class="pure-menu-item">
+          <%= link_to 'Rooms', rooms_path, class: 'pure-menu-link' %>
+        </li>
+      </ul>
+    </div>
+
     <div class="container">
       <% if notice %>
         <p><%= notice %></p>
