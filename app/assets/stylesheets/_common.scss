@@ -12,6 +12,11 @@
   height: auto;
 }
 
+.pure-menu-heading > a{
+  text-decoration: none;
+  color: inherit;
+}
+
 .pure-menu.pure-menu-horizontal > ul {
     height: 60px;
 
