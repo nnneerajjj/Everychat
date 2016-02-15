@@ -15,7 +15,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         'baloon-left'
 
     """
-    <div>
+    <div class="message">
       <span>#{data['user_name']}</span>
       <div class="#{klass}">
         #{data['message_content']}

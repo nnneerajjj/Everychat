@@ -1,75 +1,72 @@
-.baloon-right {
+@mixin baloon($background-color: #FFFFFF) {
   position: relative;
-  width: 250px;
-  min-height: 50px;
-  padding: 3px;
-  background: #9DFF9A;
+  min-width: 10px;
+  max-width: 300px;
+  min-height: 30px;
+  padding: 5px 8px 0 8px;
+  background: $background-color;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   border: #7F7F7F solid 3px;
+}
+
+.baloon-right {
+  @include baloon(#9DFF9A);
 }
 
 .baloon-right:after {
   content: '';
   position: absolute;
   border-style: solid;
-  border-width: 10px 0 10px 15px;
+  border-width: 8px 0 8px 12px;
   border-color: transparent #9DFF9A;
   display: block;
   width: 0;
   z-index: 1;
-  right: -15px;
-  top: 15px;
+  right: -12px;
+  top: 12px;
 }
 
 .baloon-right:before {
   content: '';
   position: absolute;
   border-style: solid;
-  border-width: 12px 0 12px 17px;
+  border-width: 10px 0 10px 14px;
   border-color: transparent #7F7F7F;
   display: block;
   width: 0;
   z-index: 0;
-  right: -20px;
-  top: 13px;
+  right: -17px;
+  top: 10px;
 }
 
 .baloon-left {
-  position: relative;
-  width: 250px;
-  min-height: 50px;
-  padding: 3px;
-  background: #FFFFFF;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  border: #7F7F7F solid 3px;
+  @include baloon;
 }
 
 .baloon-left:after {
   content: '';
   position: absolute;
   border-style: solid;
-  border-width: 10px 15px 10px 0;
+  border-width: 8px 12px 8px 0;
   border-color: transparent #FFFFFF;
   display: block;
   width: 0;
   z-index: 1;
-  left: -15px;
-  top: 15px;
+  left: -12px;
+  top: 12px;
 }
 
 .baloon-left:before {
   content: '';
   position: absolute;
   border-style: solid;
-  border-width: 12px 17px 12px 0;
+  border-width: 10px 14px 10px 0;
   border-color: transparent #7F7F7F;
   display: block;
   width: 0;
   z-index: 0;
-  left: -20px;
-  top: 13px;
+  left: -17px;
+  top: 10px;
 }
