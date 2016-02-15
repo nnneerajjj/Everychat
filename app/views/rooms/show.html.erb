@@ -19,11 +19,13 @@
   <div class="clear"></div>
 </div>
 
-<form class="pure-form">
-  <fieldset>
-    <legend>Say something:</legend>
-    <input type="text" data-behavior="room_speaker">
-  </fieldset>
-</form>
+<div id="speaker">
+  <form class="pure-form">
+    <fieldset>
+      <legend>Say something:</legend>
+      <input type="text" data-behavior="room_speaker">
+    </fieldset>
+  </form>
+</div>
 
 <%= hidden_field_tag :current_user_id, current_user.id %>

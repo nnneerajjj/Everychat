@@ -5,6 +5,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (data) ->
     $('#messages').append this.render_message(data)
+    autoScroll()
     # $('#messages').append data['message']
 
   render_message: (data) ->
