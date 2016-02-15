@@ -2,15 +2,21 @@
 
 <div class="messages-container">
   <div id="messages">
+
     <% @messages.each do |message| %>
-      <div class="message">
+      <% klass = current_user == message.user ? 'right' : 'left' %>
+
+      <div class="message align-<%= klass %>">
         <span><%= message.user.name %></span>
-        <div class="<%= current_user == message.user ? 'baloon-right' : 'baloon-left' %>">
+        <div class="baloon-<%= klass %>">
           <%= message.content %>
         </div>
       </div>
+
     <% end %>
+
   </div>
+  <div class="clear"></div>
 </div>
 
 <form class="pure-form">
