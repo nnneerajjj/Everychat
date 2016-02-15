@@ -1,4 +1,5 @@
 @mixin baloon($background-color: #FFFFFF) {
+  word-break : break-all;
   position: relative;
   min-width: 10px;
   max-width: 300px;
