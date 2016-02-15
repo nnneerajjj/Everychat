@@ -3,7 +3,7 @@
 <% cache message do %>
   <div>
     <span><%= message.user.name %></span>
-    <div class="<%= current_user == message.user ? 'baloon-right' : 'baloon-left' %>">
+    <div class="<%= current_user == message.user ? 'balloon-right' : 'balloon-left' %>">
       <%= message.content %>
     </div>
   </div>

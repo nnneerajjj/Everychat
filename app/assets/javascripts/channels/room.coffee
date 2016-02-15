@@ -13,7 +13,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     """
     <div class="message align-#{klass}">
       <span>#{data['user_name']}</span>
-      <div class="baloon-#{klass}">
+      <div class="balloon-#{klass}">
         #{data['message_content']}
       </div>
     </div>

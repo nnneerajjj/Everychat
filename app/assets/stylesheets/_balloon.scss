@@ -1,4 +1,4 @@
-@mixin baloon($background-color: #FFFFFF) {
+@mixin balloon($background-color: #FFFFFF) {
   word-break : break-all;
   position: relative;
   min-width: 10px;
@@ -12,11 +12,11 @@
   border: #7F7F7F solid 3px;
 }
 
-.baloon-right {
-  @include baloon(#9DFF9A);
+.balloon-right {
+  @include balloon(#9DFF9A);
 }
 
-.baloon-right:after {
+.balloon-right:after {
   content: '';
   position: absolute;
   border-style: solid;
@@ -29,7 +29,7 @@
   top: 12px;
 }
 
-.baloon-right:before {
+.balloon-right:before {
   content: '';
   position: absolute;
   border-style: solid;
@@ -42,11 +42,11 @@
   top: 10px;
 }
 
-.baloon-left {
-  @include baloon;
+.balloon-left {
+  @include balloon;
 }
 
-.baloon-left:after {
+.balloon-left:after {
   content: '';
   position: absolute;
   border-style: solid;
@@ -59,7 +59,7 @@
   top: 12px;
 }
 
-.baloon-left:before {
+.balloon-left:before {
   content: '';
   position: absolute;
   border-style: solid;
