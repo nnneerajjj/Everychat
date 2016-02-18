@@ -1,6 +1,5 @@
-<h1><%= @room.name %></h1>
-
 <div class="messages-container">
+  <h2><%= @room.name %></h2>
   <div id="messages">
 
     <% @messages.each do |message| %>
@@ -17,15 +16,15 @@
 
   </div>
   <div class="clear"></div>
-</div>
 
-<div id="speaker">
-  <form class="pure-form">
-    <fieldset>
-      <legend>Say something:</legend>
-      <input type="text" data-behavior="room_speaker">
-    </fieldset>
-  </form>
+  <div id="speaker">
+    <form class="pure-form">
+      <fieldset>
+        <legend>Say something:</legend>
+        <input type="text" data-behavior="room_speaker">
+      </fieldset>
+    </form>
+  </div>
 </div>
 
 <%= hidden_field_tag :current_user_id, current_user.id %>
