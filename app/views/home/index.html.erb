@@ -3,7 +3,10 @@
     <i class="fa fa-sign-out"></i>
     Sign out
   <% end %>
-  <p><%= link_to 'Visit rooms', rooms_path %></p>
+  <%= link_to rooms_path, class: 'pure-button-secondary pure-button' do %>
+    <i class="fa fa-commenting"></i>
+    Start chat
+  <% end %>
 <% else %>
   <%= link_to new_user_session_path, class: 'pure-button-primary pure-button' do %>
     <i class="fa fa-sign-in"></i>
