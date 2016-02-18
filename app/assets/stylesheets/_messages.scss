@@ -28,7 +28,7 @@
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  border: #7F7F7F solid 3px;
+  border: #7F7F7F solid 1px;
 }
 
 .balloon-right {
@@ -39,26 +39,26 @@
   content: '';
   position: absolute;
   border-style: solid;
-  border-width: 8px 0 8px 12px;
+  border-width: 7px 0 7px 11px;
   border-color: transparent #9DFF9A;
   display: block;
   width: 0;
   z-index: 1;
-  right: -12px;
-  top: 12px;
+  right: -11px;
+  top: 10px;
 }
 
 .balloon-right:before {
   content: '';
   position: absolute;
   border-style: solid;
-  border-width: 10px 0 10px 14px;
+  border-width: 8px 0 8px 12px;
   border-color: transparent #7F7F7F;
   display: block;
   width: 0;
   z-index: 0;
-  right: -17px;
-  top: 10px;
+  right: -13px;
+  top: 9px;
 }
 
 .balloon-left {
@@ -69,24 +69,24 @@
   content: '';
   position: absolute;
   border-style: solid;
-  border-width: 8px 12px 8px 0;
+  border-width: 7px 11px 7px 0;
   border-color: transparent #FFFFFF;
   display: block;
   width: 0;
   z-index: 1;
-  left: -12px;
-  top: 12px;
+  left: -11px;
+  top: 10px;
 }
 
 .balloon-left:before {
   content: '';
   position: absolute;
   border-style: solid;
-  border-width: 10px 14px 10px 0;
+  border-width: 8px 12px 8px 0;
   border-color: transparent #7F7F7F;
   display: block;
   width: 0;
   z-index: 0;
-  left: -17px;
-  top: 10px;
+  left: -13px;
+  top: 9px;
 }
