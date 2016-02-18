@@ -11,14 +11,14 @@
   </head>
 
   <body>
-    <div class="pure-menu pure-menu-horizontal">
+    <nav class="pure-menu pure-menu-horizontal">
       <span class="pure-menu-heading"><%= link_to 'EveryChat', root_path %></span>
       <ul class="pure-menu-list">
         <li class="pure-menu-item">
           <%= link_to 'Rooms', rooms_path, class: 'pure-menu-link' %>
         </li>
       </ul>
-    </div>
+    </nav>
 
     <div class="container">
       <% if notice %>
