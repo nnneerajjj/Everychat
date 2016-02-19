@@ -15,4 +15,6 @@
 .room-messages {
   padding: 0 20px 0 20px;
   background-color: #ececec;
+  overflow: scroll;
+  max-height: 600px;
 }

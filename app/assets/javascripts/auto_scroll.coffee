@@ -1,4 +1,7 @@
-@autoScroll = (el) ->
-  bottomPosition = el.offset().top
-  if Math.abs($(window).scrollTop() - bottomPosition) <= 1000
-    $(window).scrollTop(bottomPosition)
+$ ->
+  $('.room-messages').scrollTop($('.room-messages').prop('scrollHeight'))
+
+@autoScroll = ->
+  height = $('.room-messages').prop('scrollHeight')
+  if Math.abs(height - $('.room-messages').scrollTop()) <= 1000
+    $('.room-messages').scrollTop(height)
