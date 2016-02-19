@@ -9,16 +9,21 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     # $('#messages').append data['message']
 
   render_message: (data) ->
-    direction = if +$('#current_user_id').val() == data['user_id'] then 'right' else 'left'
+    [align, balloon] =
+      if +$('#current_user_id').val() == data['user_id']
+        ['align-right', 'balloon-right']
+      else
+        ['align-left', 'balloon-left']
 
-    $('<div/>').addClass("message align-#{direction}")
+    $('<div />')
+        .addClass("message #{align}")
         .append(
-          $('<span/>')
-            .text("#{data['user_name']}")
+          $('<span />')
+            .text(data['user_name'])
 
-          $('<div/>')
-            .addClass("balloon-#{direction}")
-            .text("#{data['message_content']}")
+          $('<div />')
+            .addClass(balloon)
+            .text(data['message_content'])
         )
 
   speak: (message) ->
