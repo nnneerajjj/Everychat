@@ -41,7 +41,7 @@ class RoomsController < ApplicationController
   def enter
     redirect_to @room and return if @room.participated? current_user
     @room.participate! current_user
-    redirect_to @room # , notice: 'You participated successfully.'
+    redirect_to @room
   end
 
   private
