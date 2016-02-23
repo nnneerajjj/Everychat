@@ -1,6 +1,6 @@
-# Every Chat
+# Everychat
 
-![circle ci](https://circleci.com/gh/iguchi1124/EveryChat/tree/master.svg?&circle-token=21348c5d65f5425abbec191ccd17e214658f0965)
+![circle ci](https://circleci.com/gh/iguchi1124/Everychat/tree/master.svg?&circle-token=21348c5d65f5425abbec191ccd17e214658f0965)
 
 This is real time chat application, create with rails 5.
 
