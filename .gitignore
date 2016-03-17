@@ -1,6 +1,3 @@
-# Created by https://www.gitignore.io
-
-### Rails ###
 *.rbc
 capybara-*.html
 .rspec
@@ -15,8 +12,9 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
-# config/initializers/secret_token.rb
-# config/secrets.yml
+# TODO Comment out these rules if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+config/secrets.yml
 
 ## Environment normalization:
 /.bundle
@@ -39,10 +37,6 @@ bower.json
 # Ignore Byebug command history file.
 .byebug_history
 
-### Redis ###
-# Ignore redis binary dump (dump.rdb) files
-
-*.rdb
-
-### Vagrant ###
 .vagrant/
+dump.rdb
+.idea/
